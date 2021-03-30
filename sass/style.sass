@@ -1120,29 +1120,33 @@ header
             width: 50%
 @media ( max-width: 450px )
     .curly_bg
-        background-size: 200%
+        background-size: 370vh
     .container
-        width: 70%
+        width: 80%
     .nav_menu 
         .nav_items
-            padding-right: 0px
+            padding-right: 70px
         .nav_items.open 
             left: 0;
             right: 0;
     .pixy_main
         .container
-            padding-bottom: 150px
+            padding-bottom: 35%
         .pixy_descr
             p
+                font-size: 12px
                 line-height: normal
     .pixy_useful 
         .pixy_useful_about 
             &::before
-                top: 286px;
+                top: 85%;
             .title
+                margin-top: 20px
                 padding-bottom: 50px
     .servise_blocks
         grid-template-columns: repeat(1, 1fr)
+        &::after 
+            right: -30px;
     .processes_step 
         padding-top: 114px;
         &:nth-child(even) 
@@ -1154,18 +1158,31 @@ header
             border-radius: 10px
     .customer 
         .title 
+            transform: scale(0.9)
+            h2
+                font-size: 20px
+                margin-bottom: 20px
             p 
+                font-size: 12px
                 width: auto;
                 line-height: 20px
             &::before 
-                left: -49px;
+                width: 30px
+                left: -34px;
             &::after
-                right: -49px
+                width: 30px
+                right: -34px
         &_profile
+            margin-top: 0px
+            p
+                line-height: normal
             transform: scale(0.8)
+    .specialties_item
+        width: 50%
+        // transform: scale(0.8)
     .respond_block_form
         width: auto 
-        padding: 60px 22px 36px;
+        padding: 23px 22px 36px;
         .forms 
             .input_form 
                 width: 100%
