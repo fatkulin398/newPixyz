@@ -4,21 +4,21 @@
     box-sizing: border-box
 @font-face
     font-family: 'Comfortaa'
-    src: url('/fonts/Comfortaa-Light.eot')
-    src: local('☺'), url('/fonts/Comfortaa-Light.woff') format('woff'), url('/fonts/Comfortaa-Light.ttf') format('truetype'), url('/fonts/Comfortaa-Light.svg') format('svg')
+    src: url('../fonts/Comfortaa-Light.eot')
+    src: local('☺'), url('../fonts/Comfortaa-Light.woff') format('woff'), url('../fonts/Comfortaa-Light.ttf') format('truetype'), url('../fonts/Comfortaa-Light.svg') format('svg')
     font-weight: normal
     font-style: normal
 
 @font-face
     font-family: 'HelveticaNeueCyr'
-    src: url('/fonts/HELVETICABOLD_0.eot')
-    src: local('☺'), url('/fonts/HELVETICABOLD_0.woff') format('woff'), url('/fonts/HELVETICABOLD_0.ttf') format('truetype'), url('/fonts/HELVETICABOLD_0.svg') format('svg')
+    src: url('../fonts/HELVETICABOLD_0.eot')
+    src: local('☺'), url('../fonts/HELVETICABOLD_0.woff') format('woff'), url('../fonts/HELVETICABOLD_0.ttf') format('truetype'), url('../fonts/HELVETICABOLD_0.svg') format('svg')
     font-weight: 700
 
 @font-face
     font-family: 'HelveticaNeueCyr'
-    src: url('/fonts/helveticaneuecyr-roman.eot')
-    src: local('☺'), url('/fonts/helveticaneuecyr-roman.woff') format('woff'), url('/fonts/helveticaneuecyr-roman.ttf') format('truetype'), url('/fonts/helveticaneuecyr-roman.svg') format('svg')
+    src: url('../fonts/helveticaneuecyr-roman.eot')
+    src: local('☺'), url('../fonts/helveticaneuecyr-roman.woff') format('woff'), url('../fonts/helveticaneuecyr-roman.ttf') format('truetype'), url('../fonts/helveticaneuecyr-roman.svg') format('svg')
     font-weight: 400
     font-style: normal
 ul[class],
@@ -63,9 +63,7 @@ header
         margin-top: 10px
     .nav_menu
         display: flex
-        font-size: 15px
         text-transform: uppercase
-        font-weight: 300
         align-items: center
         // margin-left: 388px;
         margin-top: 18px
@@ -80,31 +78,30 @@ header
                     position: relative
                     font-family: "HelveticaNeueCyr"
                     font-size: 15px
-                    font-weight: 500
+                    font-weight: 400
                     text-transform: uppercase
                     margin-right: 53px
                     color: #000000
                     text-decoration: none
-                    &::after
-                        content: '';
-                        position: absolute;
-                        bottom: -22px;
-                        left: 50%;
-                        right: 50%;
-                        transition: .3s;
-                        background-color: #49D6CB;
-                        height: 2px;
+                    &::before
+                        content: ''
+                        position: absolute
+                        bottom: -22px
+                        left: 50%
+                        right: 50%
+                        transition: .3s
+                        background-color: #49D6CB
+                        height: 2px
                     &:hover
                         color: #49d6cb
-                        &::after
+                        &::before
                             left: 0px
                             right: 0px
             &:last-child
                 li
                     a
-                        &::after
-                            content: none            
-                        
+                        &::before
+                            content: none
     .lang_menu
         position: relative
         display: inline-block
@@ -117,22 +114,22 @@ header
             background: url('../icons/angle.png') no-repeat
             width: 17px
             height: 9px
-            z-index: 2
-            right: -16px 
+            z-index: 1
+            right: -16px
             top: 4px
         .lang_btn
-            outline: none
             cursor: pointer
             background: none
             font-size: 15px
             border: none
+            outline: none
         .lang_content
             box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2)
             display: none
             position: absolute
             background-color: #ffffff
             width: 45px
-            z-index: 2
+            z-index: 1
             text-decoration: none
 
             a
@@ -146,14 +143,59 @@ header
                 display: block
                 &:hover
                     color: #49d6cb
+    .hamburger
+        position: relative
+        display: none
+        width: 25px
+        height: 20px
+        cursor: pointer
+        margin-left: 20px
+        span
+            position: absolute
+            left: 0
+            right: 0
+            height: 2px
+            background-color: #000
+            top: 50%
+            margin-top: -1px
+            transition: .3s
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                right: 0
+                height: 2px
+                background-color: #000
+                top: -9px
+                transition: .4s
+            &::after
+                content: ''
+                position: absolute
+                left: 0
+                right: 0
+                height: 2px
+                background-color: #000
+                top: auto;
+                bottom: -9px
+                transition: .4s
+    .open 
+        span
+            background-color: transparent
+            &::before
+                background-color: #fff
+                transform: rotate(45deg)
+                top: 0
+            &::after
+                background-color: #fff
+                transform: rotate(-45deg)
+                top: 0
 
 .baner_bg
     top: 10px
     padding: 190px 0 145px 0
     position: relative
-    height: 380px
     background: url("../img/contact_bg.png") no-repeat center/cover
-    z-index: 1
+    z-index: -1
     &::before
         content: ""
         position: absolute
@@ -438,3 +480,112 @@ header
                 width: 700px
         .contact_block
             background-size: 50%
+@media (max-width: 768px)
+    .container
+        max-width: 680px
+    .nav_menu
+        .nav_items
+            position: fixed
+            flex-direction: column
+            justify-content: start
+            text-align: right
+            padding-top: 80px
+            padding-right: 66px
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background-color: rgba(0, 0, 0, 0.9)
+            z-index: 999
+            transition: .5s
+            left: 100%
+            right: -100%
+            
+            a
+                color: #fff
+                margin-right: 0;
+
+            li
+                margin-bottom: 40px;
+                transform: translate(150px);
+                transition: .5s;
+                    
+        .nav_items.open
+            left: 0
+            right: -50%
+                
+        .hamburger
+            z-index: 999
+            display: block
+        .hamburger.open
+            &::before,&::after
+                background-color: #fff
+    .contact_items
+        flex-wrap: wrap
+    .contact_item
+        width: 45%
+        height: auto
+        margin: 10px 10px
+
+        &__wrapper 
+            padding: 47px 76px 31px 76px;
+
+    .respond 
+        .contact_block
+            display: none
+        .respond_block_form 
+            .forms 
+                .input_form 
+                    input
+                        font-size: 14px
+                        padding: 14px 25px
+                    select
+                        font-size: 14px
+                        padding: 14px 25px
+    .footer_logo
+        img
+            width: 25%
+    .footer_menu
+        flex-wrap: wrap
+        &_item
+            width: 50%
+
+@media ( max-width: 450px )
+    .curly_bg
+        background-size: 200%
+    .container
+        width: 70%
+    .nav_menu 
+        .nav_items
+            padding-right: 0px
+        .nav_items.open 
+            left: 0;
+            right: 0;
+    .baner_bg 
+        top: 10px;
+        padding: 103px 0 100px 0;
+    .contact_item 
+        width: 100%;
+    .respond_block_form
+        width: auto 
+        padding: 60px 22px 36px;
+        .forms 
+            .input_form 
+                width: 100%
+            .submit_btn
+                margin: 0 auto
+    .footer_menu_item 
+        width: 100%
+        p
+            text-align: center
+            width: auto
+        h4
+            text-align: center
+        li
+            text-align: center
+        &_socials 
+            ul 
+                justify-content: center;
+        .contacts_f
+            li
+                text-align: left

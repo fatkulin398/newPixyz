@@ -4,21 +4,21 @@
     box-sizing: border-box
 @font-face
     font-family: 'Comfortaa'
-    src: url('/fonts/Comfortaa-Light.eot')
-    src: local('☺'), url('/fonts/Comfortaa-Light.woff') format('woff'), url('/fonts/Comfortaa-Light.ttf') format('truetype'), url('/fonts/Comfortaa-Light.svg') format('svg')
+    src: url('../fonts/Comfortaa-Light.eot')
+    src: local('☺'), url('../fonts/Comfortaa-Light.woff') format('woff'), url('../fonts/Comfortaa-Light.ttf') format('truetype'), url('../fonts/Comfortaa-Light.svg') format('svg')
     font-weight: normal
     font-style: normal
 
 @font-face
     font-family: 'HelveticaNeueCyr'
-    src: url('/fonts/HELVETICABOLD_0.eot')
-    src: local('☺'), url('/fonts/HELVETICABOLD_0.woff') format('woff'), url('/fonts/HELVETICABOLD_0.ttf') format('truetype'), url('/fonts/HELVETICABOLD_0.svg') format('svg')
+    src: url('../fonts/HELVETICABOLD_0.eot')
+    src: local('☺'), url('../fonts/HELVETICABOLD_0.woff') format('woff'), url('../fonts/HELVETICABOLD_0.ttf') format('truetype'), url('../fonts/HELVETICABOLD_0.svg') format('svg')
     font-weight: 700
 
 @font-face
     font-family: 'HelveticaNeueCyr'
-    src: url('/fonts/helveticaneuecyr-roman.eot')
-    src: local('☺'), url('/fonts/helveticaneuecyr-roman.woff') format('woff'), url('/fonts/helveticaneuecyr-roman.ttf') format('truetype'), url('/fonts/helveticaneuecyr-roman.svg') format('svg')
+    src: url('../fonts/helveticaneuecyr-roman.eot')
+    src: local('☺'), url('../fonts/helveticaneuecyr-roman.woff') format('woff'), url('../fonts/helveticaneuecyr-roman.ttf') format('truetype'), url('../fonts/helveticaneuecyr-roman.svg') format('svg')
     font-weight: 400
     font-style: normal
 ul[class],
@@ -63,9 +63,7 @@ header
         margin-top: 10px
     .nav_menu
         display: flex
-        font-size: 15px
         text-transform: uppercase
-        font-weight: 300
         align-items: center
         // margin-left: 388px;
         margin-top: 18px
@@ -74,26 +72,26 @@ header
             display: flex
             align-items: center
             li
-                margin-right: 53px
                 &:last-child
                     margin-right: 0
                 a
                     position: relative
                     font-family: "HelveticaNeueCyr"
                     font-size: 15px
-                    font-weight: 500
+                    font-weight: 400
                     text-transform: uppercase
+                    margin-right: 53px
                     color: #000000
                     text-decoration: none
                     &::before
-                        content: '';
-                        position: absolute;
-                        bottom: -22px;
-                        left: 50%;
-                        right: 50%;
-                        transition: .3s;
-                        background-color: #49D6CB;
-                        height: 2px;
+                        content: ''
+                        position: absolute
+                        bottom: -22px
+                        left: 50%
+                        right: 50%
+                        transition: .3s
+                        background-color: #49D6CB
+                        height: 2px
                     &:hover
                         color: #49d6cb
                         &::before
@@ -117,7 +115,7 @@ header
             width: 17px
             height: 9px
             z-index: 1
-            right: -16px 
+            right: -16px
             top: 4px
         .lang_btn
             cursor: pointer
@@ -145,12 +143,57 @@ header
                 display: block
                 &:hover
                     color: #49d6cb
+    .hamburger
+        position: relative
+        display: none
+        width: 25px
+        height: 20px
+        cursor: pointer
+        margin-left: 20px
+        span
+            position: absolute
+            left: 0
+            right: 0
+            height: 2px
+            background-color: #000
+            top: 50%
+            margin-top: -1px
+            transition: .3s
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                right: 0
+                height: 2px
+                background-color: #000
+                top: -9px
+                transition: .4s
+            &::after
+                content: ''
+                position: absolute
+                left: 0
+                right: 0
+                height: 2px
+                background-color: #000
+                top: auto;
+                bottom: -9px
+                transition: .4s
+    .open 
+        span
+            background-color: transparent
+            &::before
+                background-color: #fff
+                transform: rotate(45deg)
+                top: 0
+            &::after
+                background-color: #fff
+                transform: rotate(-45deg)
+                top: 0
 
 .baner_bg
     top: 10px
     padding: 190px 0 145px 0
     position: relative
-    height: 380px
     background: url("../img/Rectangle_638.png") no-repeat center/cover
     z-index: -1
     &::before
@@ -184,7 +227,7 @@ header
         text-align: center
     p
         color: #8a8a8a
-        font-family: "HelveticaNeueCyr" sans-serif
+        font-family: 'HelveticaNeueCyr', sans-serif
         font-size: 20px
         font-weight: 400
         font-style: normal
@@ -286,7 +329,6 @@ header
                         font-size: 11px
             &::before
                 background-size: 100%
-                width: 
                 right: -14px;
                 top: 6px;
                 width: 14px
@@ -297,3 +339,83 @@ header
         p
             font-size: 16px
             line-height: 1.5
+
+@media (max-width: 768px)
+    .container
+        max-width: 680px
+    .nav_menu
+        .nav_items
+            position: fixed
+            flex-direction: column
+            justify-content: start
+            text-align: right
+            padding-top: 80px
+            padding-right: 66px
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background-color: rgba(0, 0, 0, 0.9)
+            z-index: 999
+            transition: .5s
+            left: 100%
+            right: -100%
+            
+            a
+                color: #fff
+                margin-right: 0;
+
+            li
+                margin-bottom: 40px;
+                transform: translate(150px);
+                transition: .5s;
+                    
+        .nav_items.open
+            left: 0
+            right: -50%
+                
+        .hamburger
+            z-index: 999
+            display: block
+        .hamburger.open
+            &::before,&::after
+                background-color: #fff
+    .footer_logo
+        img
+            width: 25%
+    .footer_menu
+        flex-wrap: wrap
+        &_item
+            width: 50%
+
+
+
+@media ( max-width: 450px )
+    .curly_bg
+        background-size: 200%
+    .container
+        width: 70%
+    .nav_menu 
+        .nav_items
+            padding-right: 0px
+        .nav_items.open 
+            left: 0;
+            right: 0;
+    .baner_bg 
+        top: 10px;
+        padding: 103px 0 100px 0;
+    .footer_menu_item 
+        width: 100%
+        p
+            text-align: center
+            width: auto
+        h4
+            text-align: center
+        li
+            text-align: center
+        &_socials 
+            ul 
+                justify-content: center;
+        .contacts_f
+            li
+                text-align: left

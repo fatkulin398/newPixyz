@@ -95,7 +95,7 @@ header
                     margin-right: 53px
                     color: #000000
                     text-decoration: none
-                    &::after
+                    &::before
                         content: ''
                         position: absolute
                         bottom: -22px
@@ -106,14 +106,14 @@ header
                         height: 2px
                     &:hover
                         color: #49d6cb
-                        &::after
+                        &::before
                             left: 0px
                             right: 0px
-        &:last-child
-            li
-                a
-                    &::after
-                        content: none
+            &:last-child
+                li
+                    a
+                        &::before
+                            content: none
     .lang_menu
         position: relative
         display: inline-block
@@ -798,6 +798,9 @@ header
                 li + li + li
                     background: url('../icons/location.png') no-repeat
 
+
+
+    // MEDIA
 @media (max-width: 1366px)
     .container
         width: 1140px
@@ -896,7 +899,7 @@ header
                     bottom: -244px;
                     right: 93px;
             &:last-child
-                background-size: 29%
+                background-size: 25%
                 &::before
                     width: 616px;
                     bottom: -129px;
@@ -931,7 +934,7 @@ header
 
 @media (max-width: 768px)
     .container
-        max-width: 540px
+        max-width: 680px
     .nav_menu
         .nav_items
             position: fixed
@@ -975,7 +978,7 @@ header
         padding: 50px 0 0 0;
         .container
             background-position: center bottom
-            background-size: 60%
+            background-size: 50%
             padding-bottom: 250px
         .pixy_descr
             h1
@@ -997,7 +1000,7 @@ header
         .pixy_useful_about
             padding: 0 
             .title
-                padding: 0 0 20px 0
+                padding: 0 0 90px 0
                 h2
                     font-size: 20px
                     margin-bottom: 17px
@@ -1032,7 +1035,7 @@ header
                     width: 60px
                     height: 60px
                     svg
-                        width: 60%
+                        width: 50%
                     span
                         display: flex
                         align-items: center
@@ -1053,11 +1056,11 @@ header
             margin-bottom: 0
         &_step
             margin-bottom: 100px
-            padding-top: 200px
+            padding-top: 230px
             min-height: auto
             background-position: top center
             &:nth-child(even)
-                padding-top: 140px
+                padding-top: 150px
                 background-position: top center
                 .processes_step__info
                     margin-right: 0
@@ -1092,10 +1095,10 @@ header
                 width: 500px
             &::before 
                 width: 44px
-                left: -56px
+                left: 7px
             &::after
                 width: 44px
-                right: -56px
+                right: 7px
     .respond 
         .contact_block
             display: none
@@ -1115,6 +1118,75 @@ header
         flex-wrap: wrap
         &_item
             width: 50%
+@media ( max-width: 450px )
+    .curly_bg
+        background-size: 200%
+    .container
+        width: 70%
+    .nav_menu 
+        .nav_items
+            padding-right: 0px
+        .nav_items.open 
+            left: 0;
+            right: 0;
+    .pixy_main
+        .container
+            padding-bottom: 150px
+        .pixy_descr
+            p
+                line-height: normal
+    .pixy_useful 
+        .pixy_useful_about 
+            &::before
+                top: 286px;
+            .title
+                padding-bottom: 50px
+    .servise_blocks
+        grid-template-columns: repeat(1, 1fr)
+    .processes_step 
+        padding-top: 114px;
+        &:nth-child(even) 
+            padding-top: 85px;
+    .specialties_item
+        .specialties_item_wrapper
+            box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.16)
+            border: 1px solid #49d6cb
+            border-radius: 10px
+    .customer 
+        .title 
+            p 
+                width: auto;
+                line-height: 20px
+            &::before 
+                left: -49px;
+            &::after
+                right: -49px
+        &_profile
+            transform: scale(0.8)
+    .respond_block_form
+        width: auto 
+        padding: 60px 22px 36px;
+        .forms 
+            .input_form 
+                width: 100%
+            .submit_btn
+                margin: 0 auto
+    .footer_menu_item 
+        width: 100%
+        p
+            text-align: center
+            width: auto
+        h4
+            text-align: center
+        li
+            text-align: center
+        &_socials 
+            ul 
+                justify-content: center;
+        .contacts_f
+            li
+                text-align: left
+    
     
 
                 
