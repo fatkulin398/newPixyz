@@ -215,10 +215,10 @@ header
         text-align: center
 
 .price  
+    -webkit-user-select: none;
     padding: 100px 0 100px 0
     &_items
         &_list
-            
             h4 
                 padding: 18px 29px 19px 32px
                 border-radius: 15px;
@@ -240,8 +240,15 @@ header
                     height: 15px
                     right: 22px
                     top: 22px
+        .price_items_list.active
+            h4
+                &::before
+                    transition: .5s all
+                    transform: rotate(180deg)
+            .price_items_blocks
+                display: flex
         &_blocks
-            display: flex
+            display: none
             flex-wrap: wrap
             margin-top: 32px
         &_block
